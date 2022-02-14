@@ -1,0 +1,41 @@
+<div style="padding-top: 2%">
+  <p class="box-card">
+    <mat-form-field appearance="fill" style="width:30%">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="person.name" required>
+    </mat-form-field>
+  </p>
+  <p class="box-card">
+    <mat-form-field appearance="fill" style="width:30%">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="natan@gmail.com" [formControl]="email" required [(ngModel)]="person.email">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </p>
+  <p class="box-card">
+    <mat-form-field appearance="fill" style="width:30%">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="person.phone" required>
+    </mat-form-field>
+  </p>
+  <p class="box-card">
+    <mat-form-field appearance="fill" style="width:30%">
+      <mat-label>Profession</mat-label>
+      <mat-select [(ngModel)]="person.profession_id">
+        <mat-option *ngFor="let profession of professions" [value]="profession.id">
+          {{profession.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <p class="box-card" *ngIf="isAddMode">
+    <button style="width:30%" mat-raised-button color="primary" (click)="register()">
+      Register
+    </button>
+  </p>
+  <p class="box-card" *ngIf="!isAddMode">
+    <button style="width:30%" mat-raised-button color="primary" (click)="update()">
+      Update
+    </button>
+  </p>
+</div>

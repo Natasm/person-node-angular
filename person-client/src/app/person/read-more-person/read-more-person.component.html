@@ -1,0 +1,33 @@
+<mat-card class="box-card">
+  <mat-card-content>
+    <div fxLayout="row">
+
+      <div fxLayout="column" class="column-info-card">
+        <img mat-card-sm-image src="https://cdn-icons-png.flaticon.com/512/147/147140.png">
+      </div>
+
+      <div fxLayout="column" class="column-info-card" fxFlex.gt-sm="100%">
+        <mat-card-title *ngIf="person.name">
+          {{ 'Name: ' + person.name }}
+        </mat-card-title>
+        <mat-card-subtitle *ngIf="person.email">
+          {{ 'Email: ' + person.email }}
+        </mat-card-subtitle>
+        <mat-card-subtitle *ngIf="person.phone">
+          {{ 'Phone: ' + person.phone }}
+        </mat-card-subtitle>
+        <mat-card-subtitle *ngIf="person.profession">
+          {{ 'Profession: ' + person.profession.name }}
+        </mat-card-subtitle>
+      </div>
+
+      <div fxLayout="column" class="column-info-card">
+        <mat-card-actions align="end">
+          <button color='primary' mat-raised-button mat-button (click)="update(person.id)">Update</button>
+          <button color='primary' mat-raised-button mat-button (click)="openDialogConfirmDelete()">Delete</button>
+        </mat-card-actions>
+      </div>
+
+    </div>
+  </mat-card-content>
+</mat-card>

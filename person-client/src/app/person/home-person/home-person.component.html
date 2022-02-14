@@ -1,0 +1,30 @@
+<mat-list *ngFor="let person of persons" role="list">
+        <mat-list-item>
+          <mat-card class="box-card">
+            <mat-card-content>
+              <div fxLayout="row">
+
+                <div fxLayout="column" class="column-info-card">
+                  <img mat-card-sm-image src="https://cdn-icons-png.flaticon.com/512/147/147140.png">
+                </div>
+
+                <div fxLayout="column" class="column-info-card" fxFlex.gt-sm="100%">
+                  <mat-card-title>
+                    {{ 'Name: ' + person.name }}
+                  </mat-card-title>
+                  <mat-card-subtitle *ngIf="person.profession">
+                    {{ 'Profession: ' + person.profession.name }}
+                  </mat-card-subtitle>
+                </div>
+
+                <div fxLayout="column" class="column-info-card">
+                  <mat-card-actions>
+                    <button mat-raised-button color='primary' mat-button (click)="readMore(person.id)">Read more</button>
+                  </mat-card-actions>
+                </div>
+
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-list-item>
+</mat-list>

@@ -1,0 +1,19 @@
+.mat-list-item {
+  height: 100%;
+}
+
+.mat-card-title {
+  word-break: break-all;
+}
+
+.box-card {
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 100%;
+}
+
+.column-info-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

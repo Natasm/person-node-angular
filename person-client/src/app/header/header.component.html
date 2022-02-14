@@ -1,0 +1,43 @@
+<div style="height: 100vh;">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Person Registration</span>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <a [routerLink]="['person/registry']" mat-button>
+          <mat-icon>person</mat-icon>
+          Person
+        </a>
+        <a href="" mat-button>
+          <mat-icon>work</mat-icon>
+          Profession
+        </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a [routerLink]="['person/registry']" mat-list-item>
+          <mat-icon>person</mat-icon>
+          Person
+        </a>
+        <a href="#" mat-list-item>
+          <mat-icon>work</mat-icon>
+          Profession
+        </a>
+        <a (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon>close</mat-icon> Fechar
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
