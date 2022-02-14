@@ -1,0 +1,18 @@
+<div style="padding-top: 2%">
+  <p class="box-card">
+    <mat-form-field appearance="fill" style="width:30%">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="profession.name" required>
+    </mat-form-field>
+  </p>
+  <p class="box-card" *ngIf="isAddMode">
+    <button style="width:30%" mat-raised-button color="primary" (click)="register()">
+      Register
+    </button>
+  </p>
+  <p class="box-card" *ngIf="!isAddMode">
+    <button style="width:30%" mat-raised-button color="primary" (click)="update()">
+      Update
+    </button>
+  </p>
+</div>

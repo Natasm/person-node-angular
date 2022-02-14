@@ -29,6 +29,7 @@ import { PersonService } from './service/person.service';
 import { ProfessionService } from './service/profession.service';
 import { ReadMorePersonComponent } from './person/read-more-person/read-more-person.component';
 import { ErrorGeneralComponent } from './error/error-general/error-general.component';
+import { RegistryProfessionComponent } from './profession/registry-profession/registry-profession.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ErrorGeneralComponent } from './error/error-general/error-general.compo
     RegistryPersonComponent,
     HeaderComponent,
     ReadMorePersonComponent,
-    ErrorGeneralComponent
+    ErrorGeneralComponent,
+    RegistryProfessionComponent
   ],
   imports: [
     BrowserModule,
